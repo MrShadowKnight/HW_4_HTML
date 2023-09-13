@@ -101,7 +101,6 @@ main {
 }
 .hero__container {
   background-image: url("/img/Rectangle 3.png");
-  width: 651px;
   height: 387px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -121,17 +120,19 @@ main {
   border-bottom-right-radius: 30px;
 }
 .hero__container_text {
+  position: absolute;
+  bottom: 20px;
+  left: 38px;
+  right: 38px;
+}
+.hero__container_text h4 {
   color: #fff;
   font-family: Roboto;
   font-size: 28px;
   font-weight: 700;
-  position: absolute;
-  bottom: 20px;
-  left: 38px;
 }
-.hero__container_button button {
-  padding: 6px 12px 0 11px;
-  text-decoration: none;
+.hero__container_text p {
+  padding: 6px 12px;
   color: #fffefc;
   background-color: #ff910099;
   font-family: Roboto;
@@ -139,18 +140,13 @@ main {
   font-weight: 700;
   transition: 0.4s;
   border-radius: 12px;
-  border: none;
-  position: absolute;
-  left: 38px;
-  bottom: 84px;
-}
-.hero__container_button button:hover {
-  background-color: #d56363;
-  transition: 0.4s;
+  width: fit-content;
+  margin-bottom: 8px;
 }
 .hero__container_arrows {
   position: absolute;
   top: calc(50% - 32px);
+  left: 0;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -497,4 +493,38 @@ footer {
 .footer__nav_three_social a {
   text-decoration: none;
   padding-right: 32px;
+}
+/* @media screen and (max-width: 1400px) {
+  .hero__content {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .hero__content_text {
+    width: 100%;
+
+  }
+  .hero__container {
+    width: 100%;
+    height: auto;
+  }
+} */
+@media screen and (max-width: 1200px) {
+  .hero__container_text h4 {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .hero__content {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .hero__container {
+    margin-bottom: 50px;
+  }
 }
