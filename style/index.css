@@ -1,6 +1,7 @@
 .header {
   background-color: #fff;
   padding: 30px 0;
+  z-index: 101;
 }
 .header__logo {
   display: flex;
@@ -49,6 +50,36 @@
 .header__nav_contact button:hover {
   background-color: #d56363;
   transition: 0.4s;
+}
+.burger__menu {
+  position: absolute;
+  transform: translateY(-150vh);
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  z-index: 100;
+  transition: 0.5s;
+}
+.burger__menu.opened {
+  transform: translateY(80px);
+  transition: 0.5s;
+}
+.burger__menu a {
+  text-decoration: none;
+  margin: 30px 0;
+}
+.burger__menu a h2 {
+  color: #ff9100;
+  font-family: Roboto;
+  font-size: 24px;
+  text-align: center;
+}
+.burger__menu hr {
+  color: #ff9100;
+  width: 100%;
+  height: 2px;
 }
 .menu {
   background-color: transparent;
@@ -267,10 +298,11 @@ main {
   flex-direction: column;
   align-items: center;
   padding: 20px 12px;
+  position: relative;
 }
 .projects__content_cards_item img {
-  width: 140px;
-  height: 140px;
+  max-width: 140px;
+  max-height: 140px;
 }
 .projects__content_cards_item h4 {
   color: #fff;
@@ -285,6 +317,24 @@ main {
   text-align: center;
   font-family: Roboto;
   font-size: 18px;
+}
+.projects__content_cards_item div {
+  display: flex;
+}
+.projects__content_cards_item_arrow {
+  height: 28px;
+  width: 28px;
+  cursor: pointer;
+}
+.projects__content_cards_item_arrow.left {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.projects__content_cards_item_arrow.right {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 .projects__content_cards_other {
   display: flex;
@@ -336,25 +386,33 @@ main {
 }
 .team__content {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: 46px;
 }
 .team__people {
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.team__people_item {
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .team__people_item img {
   width: 224px;
   height: 224px;
-  border-radius: 50%;
   margin: 0 40px;
+  border-radius: 50%;
 }
 .team__people_item.active {
   background: url("/img/Ellipse 3.png");
-  width: 224px;
-  height: 224px;
-  border-radius: 50%;
+  max-width: 224px;
+  max-height: 224px;
   margin: 0 40px;
+  border-radius: 50%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -453,6 +511,7 @@ main {
   height: 60px;
   filter: grayscale(100%);
   transition: 0.4s;
+  margin-right: 10px;
 }
 .partners__item_logo_img:hover {
   filter: grayscale(0%);
@@ -467,6 +526,7 @@ footer {
   color: #fff;
   margin-top: 36px;
   display: flex;
+  justify-content: space-between;
 }
 .footer__logo {
   text-decoration: none;
@@ -519,6 +579,7 @@ footer {
   text-decoration: none;
 }
 .footer__nav_three ul li {
+  align-items: center;
   list-style: none;
   padding-bottom: 8px;
 }
@@ -538,31 +599,81 @@ footer {
 }
 .footer__nav_three_social a {
   text-decoration: none;
-  padding-right: 32px;
+  padding: 0 16px;
 }
-/* @media screen and (max-width: 1400px) {
-  .hero__content {
-    order: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+@media screen and (max-width: 1399px) {
+  .projects__content_cards_item img {
+    max-width: 120px;
+    max-height: 12+0px;
   }
-  .hero__content_text {
-    width: 100%;
-
+  .projects__content_cards_item h4,
+  .projects__content_cards_other h4 {
+    font-size: 20px;
   }
-  .hero__container {
-    width: 100%;
-    height: auto;
+  .projects__content_cards_item p,
+  .projects__content_cards_other p {
+    font-size: 16px;
   }
-} */
-@media screen and (max-width: 1200px) {
+  .footer__nav_three ul li a {
+    font-size: 22px;
+  }
+  .team__content_button button {
+    width: 490px;
+    height: 90px;
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .projects__content_cards_item img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+  .projects__content_cards_item h4,
+  .projects__content_cards_other h4 {
+    font-size: 17px;
+  }
+  .projects__content_cards_item p,
+  .projects__content_cards_other p {
+    font-size: 15px;
+  }
   .hero__container_text h4 {
     font-size: 22px;
   }
+  .team__content svg {
+    display: none;
+  }
+  .team__people_item.active div {
+    background-color: #ffffff00;
+  }
+  .team__people_item.active div h4 {
+    display: none;
+  }
+  .team__people_item.active div h5 {
+    display: none;
+  }
+  .team__people_item.active div p {
+    display: none;
+  }
+  .footer__nav_one {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer__nav_two {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .team__content_button button {
+    width: 450px;
+    height: 74px;
+    font-size: 20px;
+  }
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 999px) {
+  main {
+    padding-top: 0;
+  }
   .hero__content {
     order: 1;
     display: flex;
@@ -583,5 +694,187 @@ footer {
   }
   .hero__container {
     margin-bottom: 50px;
+  }
+  .team__people_item img {
+    max-width: 180px;
+    max-height: 180px;
+    margin: 0 30px;
+  }
+  .team__people_item.active div {
+    max-width: 180px;
+    max-height: 180px;
+    margin: 0 30px;
+  }
+  .team__people_item.active {
+    max-width: 180px;
+    max-height: 180px;
+    margin: 0 30px;
+  }
+  .partners__item_logo_img {
+    filter: grayscale(0%);
+  }
+  .projects__content_cards_item h4,
+  .projects__content_cards_other h4 {
+    font-size: 22px;
+  }
+  .projects__content_cards_item p,
+  .projects__content_cards_other p {
+    font-size: 18px;
+  }
+  .projects__content_cards {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 767px) {
+  .partners__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .partners__items > div {
+    margin-bottom: 20px;
+  }
+  .team__people_item img {
+    max-width: 140px;
+    max-height: 140px;
+    margin: 0 24px;
+  }
+  .team__people_item.active div {
+    max-width: 140px;
+    max-height: 140px;
+    margin: 0 24px;
+  }
+  .team__people_item.active {
+    max-width: 140px;
+    max-height: 140px;
+    margin: 0 24px;
+  }
+  .footer {
+    flex-direction: column;
+  }
+  .footer__nav_three_social {
+    flex-direction: column;
+  }
+  .footer__nav_three_social a {
+    padding-top: 16px;
+  }
+  .footer__nav_three_social hr {
+    margin-top: 14px;
+    color: #fff;
+    width: 100%;
+    height: 1px;
+  }
+  .team__content_button button {
+    width: 300px;
+    height: 40px;
+    font-size: 18px;
+  }
+  .hero__content_subtitle {
+    font-size: 32px;
+  }
+  .hero__content_title {
+    font-size: 58px;
+  }
+  .projects__title h3 {
+    font-size: 28px;
+  }
+  .team__title h3 {
+    font-size: 28px;
+  }
+  .partners h2 {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .hero {
+    padding: 0 10px;
+  }
+  .team__content_button button {
+    width: 220px;
+    height: 40px;
+    font-size: 18px;
+  }
+  .team__people_item img {
+    width: 98px;
+    height: 98px;
+    margin: 0 20px;
+  }
+  .team__people_item.active div {
+    max-width: 98px;
+    max-height: 98px;
+    margin: 0 20px;
+  }
+  .team__people_item.active {
+    max-width: 98px;
+    max-height: 98px;
+    margin: 0 20px;
+  }
+  .hero__content_subtitle {
+    font-size: 28px;
+  }
+  .hero__content_title {
+    font-size: 54px;
+  }
+  .projects__title h3 {
+    font-size: 24px;
+  }
+  .team__title h3 {
+    font-size: 24px;
+  }
+  .partners h2 {
+    font-size: 24px;
+  }
+  .team__content_dots div {
+    height: 14px;
+    width: 14px;
+    margin: 0 5px;
+  }
+  .hero__container_dots div {
+    height: 14px;
+    width: 14px;
+    margin: 0 5px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .team__people_item img {
+    margin: 0 16px;
+  }
+  .team__people_item.active div {
+    margin: 0 16px;
+  }
+  .team__people_item.active {
+    margin: 0 16px;
+  }
+  .header__logo img {
+    width: 44px;
+    height: 44px;
+  }
+  .header__nav_contact button {
+    font-size: 12px;
+    padding: 6px 20px;
+  }
+  .hero__content_subtitle {
+    font-size: 24px;
+  }
+  .hero__content_title {
+    font-size: 48px;
+  }
+  .projects__title h3 {
+    font-size: 18px;
+  }
+  .team__title h3 {
+    font-size: 18px;
+  }
+  .partners h2 {
+    font-size: 18px;
+  }
+  .team__content_dots div {
+    height: 10px;
+    width: 10px;
+    margin: 0 4px;
+  }
+  .hero__container_dots div {
+    height: 10px;
+    width: 10px;
+    margin: 0 4px;
   }
 }

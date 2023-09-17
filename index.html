@@ -36,7 +36,7 @@
                 src="/img/header_logo.png"
                 alt="logo"
               />
-              <div class="header__logo_text">
+              <div class="header__logo_text d-sm-flex d-none">
                 Громадська <br />
                 організація <br />
                 ІТ - місто
@@ -55,11 +55,11 @@
                 ><button>Контакти</button></a
               >
               <button
-                class="menu d-lg-none d-flex"
+                class="burger__menu_btn menu d-lg-none d-flex"
                 onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))"
-                aria-label="Main Menu"
+                aria-label="burger__menu"
               >
-                <svg width="100" height="100" viewBox="0 0 100 100">
+                <svg width="40" height="40" viewBox="0 0 100 100">
                   <path
                     class="line line1"
                     d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
@@ -72,6 +72,14 @@
                 </svg>
               </button>
             </div>
+          </div>
+          <div class="burger__menu">
+            <a href=""> <h2>Новини</h2> </a><a href=""> <h2>Проекти</h2> </a
+            ><a href=""> <h2>Команда</h2> </a
+            ><a href="">
+              <h2>Про нас</h2>
+            </a>
+            <hr />
           </div>
         </div>
       </div>
@@ -159,50 +167,56 @@
           <div class="row">
             <div class="col-12">
               <div class="projects__content">
-                <p>
+                <p class="d-none d-sm-flex">
                   Громадська організація “ІТ- місто” авьтвно залучається до
                   життя громади Дрогобицької ОТГ,<br />
                   зокрема реалізували та реплізовуємо наступні проекти:
                 </p>
                 <div class="projects__content_cards">
-                  <div class="projects__content_cards_item">
+                  <div class="projects__content_cards_item d-lg-flex d-none">
                     <img src="/img/presentation 1.png" alt="" />
                     <h4>ВЧИТЕЛЬ 2.0</h4>
                     <p>
-                      навчання вичителів<br />
-                      місцевих сучасних digital<br />
-                      напрямків...
+                      навчання вичителів місцевих сучасних digital напрямків...
                     </p>
                   </div>
-                  <div class="projects__content_cards_item">
+                  <div class="projects__content_cards_item d-lg-flex d-none">
                     <img src="/img/classroom 1.png" alt="" />
                     <h4>СЕЛЕКТИВНІ КУРСИ</h4>
                     <p>
-                      Запровадження гуртків в<br />
-                      школах та навчання там<br />
-                      сучісних креативних нап..
+                      Запровадження гуртків в школах та навчання там сучісних
+                      креативних нап..
                     </p>
                   </div>
-                  <div class="projects__content_cards_other active">
+                  <div
+                    class="projects__content_cards_other active d-none d-sm-flex"
+                  >
                     <img src="/img/Group 2 3.png" alt="" />
                     <h4>КОВОРКІНГ</h4>
                     <p>
-                      На базі НВК “Зефір”<br />
-                      вікрито безкоштовний<br />
-                      коворкінг для людей,<br />
-                      котрі були вимушені<br />
-                      покинути свої доміки у<br />
-                      звязку з війною. Більше<br />
-                      деталей за посилання
+                      На базі НВК “Зефір” вікрито безкоштовний коворкінг для
+                      людей, котрі були вимушені покинути свої доміки у звязку з
+                      війною. Більше деталей за посилання
                     </p>
                   </div>
                   <div class="projects__content_cards_item">
+                    <div>
+                      <img
+                        class="projects__content_cards_item_arrow left d-sm-none d-flex"
+                        src="/img/akar-icons_chevron-left.png"
+                        alt=""
+                      />
+                      <img
+                        class="projects__content_cards_item_arrow right d-sm-none d-flex"
+                        src="/img/akar-icons_chevron-right.png"
+                        alt=""
+                      />
+                    </div>
                     <img src="/img/project 1.png" alt="" />
                     <h4>КОНКУРС ПРОЕКТІВ</h4>
                     <p>
-                      Представники різних шкіл<br />
-                      матимуть можливість<br />
-                      скласти проект та....
+                      Представники різних шкіл матимуть можливість скласти
+                      проект та....
                     </p>
                   </div>
                 </div>
@@ -518,7 +532,7 @@
         <div class="container">
           <div class="row">
             <div class="partners__items">
-              <div class="col-2">
+              <div class="col-lg-2 col-md-3">
                 <a href="/" class="partners__item_logo">
                   <img
                     class="partners__item_logo_img"
@@ -532,7 +546,7 @@
                   </div>
                 </a>
               </div>
-              <div class="col-2">
+              <div class="col-lg-2 col-md-3">
                 <a href="/" class="partners__item_logo">
                   <img
                     class="partners__item_logo_img"
@@ -546,7 +560,7 @@
                   </div>
                 </a>
               </div>
-              <div class="col-2">
+              <div class="col-lg-2 col-md-3">
                 <a href="/" class="partners__item_logo">
                   <img
                     class="partners__item_logo_img"
@@ -560,7 +574,7 @@
                   </div>
                 </a>
               </div>
-              <div class="col-2">
+              <div class="col-lg-2 col-md-3">
                 <a href="/" class="partners__item_logo">
                   <img
                     class="partners__item_logo_img"
@@ -574,7 +588,7 @@
                   </div>
                 </a>
               </div>
-              <div class="col-2">
+              <div class="col-2 d-lg-flex d-none">
                 <a href="/" class="partners__item_logo">
                   <img
                     class="partners__item_logo_img"
@@ -588,7 +602,7 @@
                   </div>
                 </a>
               </div>
-              <div class="col-2">
+              <div class="col-2 d-lg-flex d-none">
                 <a href="/" class="partners__item_logo">
                   <img
                     class="partners__item_logo_img"
@@ -611,7 +625,7 @@
       <div class="container">
         <div class="row">
           <div class="footer col-12">
-            <a href="/" class="footer__logo col-3">
+            <a href="/" class="footer__logo d-none d-md-flex">
               <img
                 class="footer__logo_img"
                 src="/img/footer_logo.png"
@@ -623,42 +637,47 @@
                 ІТ - місто
               </div>
             </a>
-            <div class="col-3">
-              <nav class="footer__nav_one">
-                <ul>
-                  <li><a href="#" id="news">Новини</a></li>
-                  <li><a href="#">Проекти</a></li>
-                  <li><a href="#">Команда</a></li>
-                </ul>
-              </nav>
+            <div class="col-lg-4 d-xl-flex">
+              <div class="col-xl-6">
+                <nav class="footer__nav_one">
+                  <ul>
+                    <li><a href="#" id="news">Новини</a></li>
+                    <li><a href="#">Проекти</a></li>
+                    <li><a href="#">Команда</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="col-xl-6">
+                <nav class="footer__nav_two">
+                  <ul>
+                    <li><a href="#">Про нас</a></li>
+                    <li><a href="#">Контакти</a></li>
+                  </ul>
+                </nav>
+              </div>
             </div>
-            <div class="col-3">
-              <nav class="footer__nav_two">
-                <ul>
-                  <li><a href="#">Про нас</a></li>
-                  <li><a href="#">Контакти</a></li>
-                </ul>
-              </nav>
-            </div>
-            <div class="col-3">
+            <div>
               <nav class="footer__nav_three">
                 <ul>
-                  <li>
+                  <li class="d-none d-md-flex">
                     <img
                       class="footer__nav_three_img"
                       src="/img/old-typical-phone 1.png"
                     /><a href="#">+380 XX XXX XX XX</a>
                   </li>
-                  <li>
+                  <li class="d-none d-md-flex">
                     <img
                       class="footer__nav_three_img"
                       src="/img/email 1.png"
-                    /><a href="#">temp@temp.com</a>"
+                    /><a href="#">temp@temp.com</a>
                   </li>
                   <li class="footer__nav_three_social">
-                    <a href="#"><img src="/img/telegram 1.png" /></a
-                    ><a href="#"><img src="/img/facebook 1.png" /></a
-                    ><a href="#"><img src="/img/instagram (1) 1.png" /></a>
+                    <hr class="d-md-none" />
+                    <div>
+                      <a href="#"><img src="/img/telegram 1.png" /></a
+                      ><a href="#"><img src="/img/facebook 1.png" /></a
+                      ><a href="#"><img src="/img/instagram (1) 1.png" /></a>
+                    </div>
                   </li>
                 </ul>
               </nav>
@@ -675,3 +694,12 @@
   integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
   crossorigin="anonymous"
 ></script>
+<script src="/script/index.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>
+  jQuery(document).ready(function () {
+    jQuery(".burger__menu_btn").click(function () {
+      jQuery(".burger__menu").toggleClass("opened");
+    });
+  });
+</script>
